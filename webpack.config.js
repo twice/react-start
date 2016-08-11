@@ -13,8 +13,10 @@ config = {
   module: {
     loaders: [
       { loader: 'babel', test: /\.jsx?$/, exclude: /node_modules/},
+      { loader: 'style!css?modules!postcss', test: /\.css$/ },
     ]
   },
+  postcss: [ require('autoprefixer') ],
   devServer: {
     contentBase: public_dir,
     colors: true,
