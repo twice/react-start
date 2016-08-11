@@ -17,10 +17,12 @@ config = {
     ]
   },
   postcss: [ require('autoprefixer') ],
+  plugins: [ new webpack.HotModuleReplacementPlugin() ],
   devServer: {
     contentBase: public_dir,
     colors: true,
     historyApiFallback: true,
+    hot: true,
     inline: true,
     port: 4000,
   }
